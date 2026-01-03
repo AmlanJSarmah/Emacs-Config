@@ -7,7 +7,7 @@
 ;; Set font
 (set-face-attribute 'default nil
 		    :font "JetBrains Mono"
-		    :height 120
+		    :height 160
 		    :weight 'regular)
 
 ;; Set theme
@@ -128,9 +128,13 @@
 	     (doom-modeline-buffer-file-name-style 'relative-from-project))
 
 ;; THEMES
-(use-package doom-themes
-	     :config
-	     (load-theme 'doom-one t))
+;;(use-package doom-themes
+;;	     :config
+;;	     (load-theme 'doom-one t))
+(use-package catppuccin-theme
+  :config
+  (setq catppuccin-flavor 'mocha)  ; Options: 'latte, 'frappe, 'macchiato, 'mocha
+  (load-theme 'catppuccin t))
 
 ;; TREE SITTER
 ;; Enable Tree-sitter when available
@@ -267,14 +271,6 @@
 
 
 
-;; For Auto Formatting on save
-(add-hook 'eglot-managed-mode-hook
-	  (lambda ()
-	    (add-hook 'before-save-hook
-		      #'eglot-format-buffer nil t)))
-
-
-
 ;; Completion UI
 (use-package corfu
 	     :ensure t
@@ -291,15 +287,15 @@
 
 ;; ========== EMACS ==========
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(doom-modeline-check-simple-format t nil nil "Customized with use-package doom-modeline")
-  '(package-selected-packages nil))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(doom-modeline-check-simple-format t nil nil "Customized with use-package doom-modeline")
+ '(package-selected-packages nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
